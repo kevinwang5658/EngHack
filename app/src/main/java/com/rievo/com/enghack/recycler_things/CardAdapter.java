@@ -5,8 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import timber.log.Timber;
-
 /**
  * Created by kevin and Josie on 2017-05-27.
  */
@@ -33,25 +31,25 @@ public class CardAdapter extends RecyclerView.Adapter<CardDisplay> {
 
         switch (randColor) {
             case 0:
-                color = R.color.color1;
+                color = R.color.darkcyan;
                 break;
             case 1:
-                color = R.color.color2;
+                color = R.color.lightpurple;
                 break;
             case 2:
-                color = R.color.color3;
+                color = R.color.lightorange;
                 break;
             case 3:
-                color = R.color.color4;
+                color = R.color.lightred;
                 break;
             case 4:
-                color = R.color.color5;
+                color = R.color.brown;
                 break;
             case 5:
-                color = R.color.color6;
+                color = R.color.brightturquoise;
                 break;
             case 6:
-                color = R.color.color7;
+                color = R.color.blue;
                 break;
             default:
                 color = 0xffffff;

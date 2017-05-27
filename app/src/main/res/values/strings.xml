@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Billboard</string>
     <color name="turquoise">#0ff5de</color>
-    <color name="color1">#0c99c0</color>
-    <color name="color2">#d39ff9</color>
-    <color name="color3">#f8ba91</color>
-    <color name="color4">#f89191</color>
-    <color name="color5">#806f6f </color>
-    <color name="color6">#6bffd5</color>
-    <color name="color7">#8880ff</color>
+    <color name="darkcyan">#0c99c0</color>
+    <color name="lightpurple">#d39ff9</color>
+    <color name="lightorange">#f8ba91</color>
+    <color name="lightred">#f89191</color>
+    <color name="brown">#806f6f </color>
+    <color name="brightturquoise">#6bffd5</color>
+    <color name="blue">#8880ff</color>
 </resources>
