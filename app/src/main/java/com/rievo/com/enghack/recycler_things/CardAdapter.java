@@ -28,6 +28,39 @@ public class CardAdapter extends RecyclerView.Adapter<CardDisplay> {
     public void onBindViewHolder(CardDisplay holder, int position) {
         holder.textView.setText("Text");
 
+        int randColor = (int) (Math.random() * 7);
+        int color = 0;
+
+        switch (randColor) {
+            case 0:
+                color = R.color.color1;
+                break;
+            case 1:
+                color = R.color.color2;
+                break;
+            case 2:
+                color = R.color.color3;
+                break;
+            case 3:
+                color = R.color.color4;
+                break;
+            case 4:
+                color = R.color.color5;
+                break;
+            case 5:
+                color = R.color.color6;
+                break;
+            case 6:
+                color = R.color.color7;
+                break;
+            default:
+                color = 0xffffff;
+        }
+
+        Timber.d(color + "");
+
+        holder.itemView.setBackgroundColor(holder.itemView.getContext().getResources().getColor(color));
+
         int randNum = (int) (Math.random() * 500) + 500;
         StringBuilder stringBuilder = new StringBuilder();
         for (int counter = 0; counter < randNum; counter++){

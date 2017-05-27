@@ -22,8 +22,7 @@ public class CardDisplay extends RecyclerView.ViewHolder{
     @BindView(R.id.description_card) TextView descriptionCard;
 
     int index;
-    MainPage mainPage;
-
+    
     public CardDisplay(View itemView, ItemClickListener itemClickListener) {
         super(itemView);
         ButterKnife.bind(this, itemView);
