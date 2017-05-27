@@ -57,8 +57,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardDisplay> {
                 color = 0xffffff;
         }
 
-        Timber.d(color + "");
-
         holder.itemView.setBackgroundColor(holder.itemView.getContext().getResources().getColor(color));
 
         int randNum = (int) (Math.random() * 500) + 500;
