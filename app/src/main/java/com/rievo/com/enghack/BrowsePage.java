@@ -10,7 +10,9 @@ import android.widget.RelativeLayout;
 
 import com.rievo.android.library.LinearBackStack;
 import com.rievo.com.enghack.browse.BrowseAdapter;
+import com.rievo.com.enghack.mysaved.MainPage;
 import com.rievo.com.enghack.recycler_things.CardListViewGroup;
+import com.rievo.com.enghack.recycler_things.FilteredPage;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
 import butterknife.BindView;
@@ -47,7 +49,7 @@ public class BrowsePage extends RelativeLayout{
 
     public void onItemClick(int index){
         LinearBackStack.get(TAG).replaceView((layoutInflater, viewGroup) -> {
-           return new CardListViewGroup(layoutInflater.getContext());
+           return new FilteredPage(layoutInflater.getContext());
         }).done();
     }
 }
