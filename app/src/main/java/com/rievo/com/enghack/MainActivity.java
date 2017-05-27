@@ -1,5 +1,6 @@
 package com.rievo.com.enghack;
 
+import android.rievo.com.enghack.BuildConfig;
 import android.rievo.com.enghack.R;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import com.roughike.bottombar.BottomBar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import timber.log.Timber;
 
 import static android.view.View.GONE;
 
@@ -29,6 +31,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (BuildConfig.DEBUG) {
+            Timber.plant(new Timber.DebugTree() {
+                @Override
+                protected String createStackElementTag(StackTraceElement element) {
+                    return super.createStackElementTag(element) + ":" + element.getLineNumber();
+                }
+            });
+        }
+
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
@@ -76,12 +87,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         BackStackManager.getBackStackManager().goBack();
     }
 }
