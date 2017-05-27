@@ -8,11 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.rievo.android.library.LinearBackStack;
 import com.rievo.com.enghack.browse.BrowseAdapter;
+import com.rievo.com.enghack.recycler_things.CardListViewGroup;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import timber.log.Timber;
 
 /**
  * Created by kevin on 2017-05-27.
@@ -36,9 +39,15 @@ public class BrowsePage extends RelativeLayout{
 
         ButterKnife.bind(this);
 
-        browseAdapter = new BrowseAdapter();
+        browseAdapter = new BrowseAdapter(this);
         categoryRecycler.setAdapter(browseAdapter);
         categoryRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         categoryRecycler.addItemDecoration(new HorizontalDividerItemDecoration.Builder(getContext()).build());
+    }
+
+    public void onItemClick(int index){
+        LinearBackStack.get(TAG).replaceView((layoutInflater, viewGroup) -> {
+           return new CardListViewGroup(layoutInflater.getContext());
+        }).done();
     }
 }
