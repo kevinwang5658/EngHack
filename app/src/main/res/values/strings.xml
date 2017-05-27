@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EngHack</string>
+    <color name="turquoise">#0ff5de</color>
 </resources>
