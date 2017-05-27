@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="android.rievo.com.enghack.MainActivity">
-    <com.roughike.bottombar.BottomBarBadge
+    tools:context="com.rievo.com.enghack.MainActivity">
+    <com.roughike.bottombar.BottomBar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
         app:bb_tabXmlResource="@xml/bottombar"/>
 
 </RelativeLayout>

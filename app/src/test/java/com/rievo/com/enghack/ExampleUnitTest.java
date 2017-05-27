@@ -1,4 +1,4 @@
-package android.rievo.com.enghack;
+package com.rievo.com.enghack;
 
 import org.junit.Test;
 
