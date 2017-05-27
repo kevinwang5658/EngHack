@@ -3,9 +3,9 @@
     <color name="turquoise">#0ff5de</color>
     <color name="darkcyan">#0c99c0</color>
     <color name="lightpurple">#d39ff9</color>
-    <color name="lightorange">#f8ba91</color>
-    <color name="lightred">#f89191</color>
-    <color name="brown">#806f6f </color>
+    <color name="lightorange">#6bffb3</color>
+    <color name="lightred">#f891c4</color>
+    <color name="brown">#0c55c4 </color>
     <color name="brightturquoise">#6bffd5</color>
     <color name="blue">#8880ff</color>
 </resources>

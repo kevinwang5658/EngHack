@@ -30,10 +30,26 @@ public class CardAdapter extends RecyclerView.Adapter<CardDisplay> {
 
     @Override
     public void onBindViewHolder(CardDisplay holder, int position) {
-        holder.textView.setText("Text");
 
+        String text = "";
         int randColor = (int) (Math.random() * 7);
         int color = 0;
+
+        switch (position %3) {
+            case 0:
+                text = "CARNIVAL";
+                break;
+            case 1:
+                text = "GARAGE SALE";
+                break;
+            case 2:
+                text = "MATH TUTOR";
+                break;
+            default:
+                text ="";
+        }
+
+        holder.textView.setText(text);
 
         switch (randColor) {
             case 0:
