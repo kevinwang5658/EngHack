@@ -11,7 +11,10 @@ import android.widget.RelativeLayout;
 import com.rievo.android.library.LinearBackStack;
 import com.rievo.com.enghack.recycler_things.CardAdapter;
 import com.rievo.com.enghack.recycler_things.CardListViewGroup;
+import com.rievo.com.enghack.recycler_things.EventPage;
 import com.rievo.com.enghack.recycler_things.ItemClickListener;
+import com.rievo.com.enghack.recycler_things.SalesPage;
+import com.rievo.com.enghack.recycler_things.ServicesPage;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -47,8 +50,25 @@ public class MyListings extends RelativeLayout implements ItemClickListener{
 
     @Override
     public void onClick(int index, int color) {
-        LinearBackStack.get(TAG).replaceView((layoutInflater, viewGroup) -> {
-            return new CardListViewGroup(layoutInflater.getContext());
-        }).done();
+        Timber.d(index % 3 + "");
+
+        switch (index % 3) {
+            case(0): {
+                LinearBackStack.get(TAG).replaceView((layoutInflater, viewGroup) -> {
+                    return new EventPage(layoutInflater.getContext(), color);
+                }).done();
+                break;
+            } case(1): {
+                LinearBackStack.get(TAG).replaceView((layoutInflater, viewGroup) -> {
+                    return new SalesPage(layoutInflater.getContext(), color);
+                }).done();
+                break;
+            }case(2): {
+                LinearBackStack.get(TAG).replaceView((layoutInflater, viewGroup) -> {
+                    return new ServicesPage(layoutInflater.getContext(), color);
+                }).done();
+                break;
+            }
+        }
     }
 }
