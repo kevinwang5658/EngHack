@@ -18,8 +18,8 @@ public class EventPage extends RelativeLayout{
 
     public EventPage(Context context, int color) {
         super(context);
-        init();
         this.color = color;
+        init();
     }
 
 

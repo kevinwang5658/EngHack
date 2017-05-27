@@ -1,9 +1,15 @@
 package com.rievo.com.enghack.recycler_things;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.rievo.com.enghack.R;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+
+import timber.log.Timber;
 
 /**
  * Created by kevin and Josie on 2017-05-27.
@@ -55,7 +61,16 @@ public class CardAdapter extends RecyclerView.Adapter<CardDisplay> {
                 color = 0xffffff;
         }
 
-        holder.itemView.setBackgroundColor(holder.itemView.getContext().getResources().getColor(color));
+        holder.itemView.setBackgroundColor(ContextCompat.getColor(holder.itemView.getContext(), color));
+
+        int color2 = Color.TRANSPARENT;
+        Drawable background = holder.itemView.getBackground();
+        if (background instanceof ColorDrawable)
+            color2 = ((ColorDrawable) background).getColor();
+
+        Timber.d("passed in:" + ContextCompat.getColor(holder.itemView.getContext(), color) + "");
+
+        Timber.d("color2:" + color2 + "");
 
         int randNum = (int) (Math.random() * 5) + 5;
         StringBuilder stringBuilder = new StringBuilder();

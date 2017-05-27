@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.rievo.android.library.LinearBackStack;
@@ -44,24 +45,30 @@ public class MainPage extends RelativeLayout implements ItemClickListener{
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
     }
 
+    int colorz = 0;
+
     @Override
     public void onClick(int index, int color) {
         Timber.d(index % 3 + "");
+        Timber.d(color + "");
+
+        colorz = color;
+
 
         switch (index % 3) {
             case(0): {
                 LinearBackStack.get(TAG).replaceView((layoutInflater, viewGroup) -> {
-                    return new EventPage(layoutInflater.getContext(), color);
+                    return new EventPage(layoutInflater.getContext(), colorz);
                 }).done();
                 break;
             } case(1): {
                 LinearBackStack.get(TAG).replaceView((layoutInflater, viewGroup) -> {
-                    return new SalesPage(layoutInflater.getContext(), color);
+                    return new SalesPage(layoutInflater.getContext(), colorz);
                 }).done();
                 break;
             }case(2): {
                 LinearBackStack.get(TAG).replaceView((layoutInflater, viewGroup) -> {
-                    return new ServicesPage(layoutInflater.getContext(), color);
+                    return new ServicesPage(layoutInflater.getContext(), colorz);
                 }).done();
                 break;
             }

@@ -1,6 +1,8 @@
 package com.rievo.com.enghack.recycler_things;
 
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.rievo.com.enghack.R;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -32,9 +34,12 @@ public class CardDisplay extends RecyclerView.ViewHolder{
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int x = ((ColorDrawable) itemView.getBackground()).getColor();
-                Timber.d(x + "");
-                itemClickListener.onClick(index, x);
+                int color = Color.TRANSPARENT;
+                Drawable background = itemView.getBackground();
+                if (background instanceof ColorDrawable)
+                    color = ((ColorDrawable) background).getColor();
+
+                itemClickListener.onClick(index, color);
             }
         });
     }

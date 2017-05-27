@@ -16,11 +16,13 @@ public class ServicesPage extends RelativeLayout{
 
     public ServicesPage(Context context, int color) {
         super(context);
-        init();
         this.color=color;
+        init();
+
     }
 
     private void init(){
         View view = LayoutInflater.from(getContext()).inflate(R.layout.services_template, this, true);
+        view.setBackgroundColor(color);
     }
 }
