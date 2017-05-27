@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.rievo.com.enghack.R;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.esotericsoftware.kryo.serializers.FieldSerializer;
@@ -24,6 +25,7 @@ public class CardDisplay extends RecyclerView.ViewHolder{
 
     @BindView(R.id.card_name) TextView textView;
     @BindView(R.id.description_card) TextView descriptionCard;
+    @BindView(R.id.person_photo) ImageView imageView;
 
     int index;
 

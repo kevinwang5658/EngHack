@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
+
 import timber.log.Timber;
 
 /**
@@ -34,13 +36,16 @@ public class CardAdapter extends RecyclerView.Adapter<CardDisplay> {
         String text = "";
         int randColor = (int) (Math.random() * 7);
         int color = 0;
+        int imageId = 0;
 
         switch (position %3) {
             case 0:
                 text = "CARNIVAL";
+                imageId = R.drawable.carnival_image;
                 break;
             case 1:
                 text = "GARAGE SALE";
+                imageId = R.drawable.glitch_simplified_pink_royal_chair;
                 break;
             case 2:
                 text = "MATH TUTOR";
@@ -97,6 +102,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardDisplay> {
 
         holder.descriptionCard.setText(finalString);
         holder.index = position;
+        Glide.with(holder.itemView.getContext())
+                .load(0)
+                .placeholder(imageId)
+                .into(holder.imageView);
     }
 
     @Override
