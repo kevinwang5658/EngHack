@@ -2,10 +2,13 @@ package com.rievo.com.enghack.mysaved;
 
 import android.content.Context;
 import android.rievo.com.enghack.R;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
+
+import com.rievo.com.enghack.recycler_things.CardAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,8 +29,10 @@ public class MySavedListings extends RelativeLayout{
     }
 
     private void init(){
-
         View view = LayoutInflater.from(getContext()).inflate(R.layout.mysavedlistings, this, true);
         ButterKnife.bind(this);
+
+        recyclerView.setAdapter(new CardAdapter());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 }
