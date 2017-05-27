@@ -1,5 +1,6 @@
 package com.rievo.com.enghack.recycler_things;
 
+import android.graphics.drawable.ColorDrawable;
 import android.rievo.com.enghack.R;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.rievo.com.enghack.mysaved.MainPage;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import timber.log.Timber;
 
 /**
  * Created by kevin and Josie on 2017-05-27.
@@ -30,7 +32,9 @@ public class CardDisplay extends RecyclerView.ViewHolder{
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                itemClickListener.onClick(index);
+                int x = ((ColorDrawable) itemView.getBackground()).getColor();
+                Timber.d(x + "");
+                itemClickListener.onClick(index, x);
             }
         });
     }

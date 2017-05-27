@@ -5,5 +5,5 @@ package com.rievo.com.enghack.recycler_things;
  */
 
 public interface ItemClickListener {
-    void onClick(int index);
+    void onClick(int index, int color);
 }

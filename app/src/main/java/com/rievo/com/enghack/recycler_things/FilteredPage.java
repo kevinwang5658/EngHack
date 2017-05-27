@@ -38,23 +38,23 @@ public class FilteredPage extends RelativeLayout implements ItemClickListener {
     }
 
     @Override
-    public void onClick(int index) {
+    public void onClick(int index, int color) {
         Timber.d(index % 3 + "");
 
         switch (index % 3) {
             case(0): {
                 LinearBackStack.get(BrowsePage.TAG).replaceView((layoutInflater, viewGroup) -> {
-                    return new EventPage(layoutInflater.getContext());
+                    return new EventPage(layoutInflater.getContext(), color);
                 }).done();
                 break;
             } case(1): {
                 LinearBackStack.get(BrowsePage.TAG).replaceView((layoutInflater, viewGroup) -> {
-                    return new SalesPage(layoutInflater.getContext());
+                    return new SalesPage(layoutInflater.getContext(), color);
                 }).done();
                 break;
             }case(2): {
                 LinearBackStack.get(BrowsePage.TAG).replaceView((layoutInflater, viewGroup) -> {
-                    return new ServicesPage(layoutInflater.getContext());
+                    return new ServicesPage(layoutInflater.getContext(), color);
                 }).done();
                 break;
             }

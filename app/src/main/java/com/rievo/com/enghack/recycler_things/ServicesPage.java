@@ -12,9 +12,12 @@ import android.widget.RelativeLayout;
 
 public class ServicesPage extends RelativeLayout{
 
-    public ServicesPage(Context context) {
+    int color;
+
+    public ServicesPage(Context context, int color) {
         super(context);
         init();
+        this.color=color;
     }
 
     private void init(){

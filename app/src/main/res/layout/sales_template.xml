@@ -54,9 +54,12 @@
                 android:layout_margin="20dp"/>
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/armchair_image"/>
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="left"
+                android:layout_margin="30dp"
+                android:src="@drawable/armchair_image"
+                android:layout_weight="0.41" />
         </LinearLayout>
     </ScrollView>
 

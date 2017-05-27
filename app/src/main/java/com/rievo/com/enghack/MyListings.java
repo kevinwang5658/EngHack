@@ -23,6 +23,8 @@ import timber.log.Timber;
 
 public class MyListings extends RelativeLayout implements ItemClickListener{
 
+    int color;
+
     public static final String TAG = "my listings";
 
     @BindView(R.id.my_listings_list) RecyclerView recyclerView;
@@ -44,7 +46,7 @@ public class MyListings extends RelativeLayout implements ItemClickListener{
     }
 
     @Override
-    public void onClick(int index) {
+    public void onClick(int index, int color) {
         LinearBackStack.get(TAG).replaceView((layoutInflater, viewGroup) -> {
             return new CardListViewGroup(layoutInflater.getContext());
         }).done();
