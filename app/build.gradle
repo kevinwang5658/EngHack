@@ -99,6 +99,8 @@ dependencies {
     compile 'com.afollestad.material-dialogs:commons:0.9.4.4'
     compile 'com.roughike:bottom-bar:2.3.1'
 
+    compile 'com.github.kevinwang5658:backstack:v1.0-beta'
+
     //**********************************************************************************************
     // Testing
     //**********************************************************************************************
