@@ -4,6 +4,7 @@ import android.content.Context;
 import android.rievo.com.enghack.R;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -33,6 +34,6 @@ public class MySavedListings extends RelativeLayout{
         ButterKnife.bind(this);
 
         recyclerView.setAdapter(new CardAdapter());
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
     }
 }

@@ -17,6 +17,7 @@ import butterknife.ButterKnife;
 public class CardDisplay extends RecyclerView.ViewHolder{
 
     @BindView(R.id.card_name) TextView textView;
+    @BindView(R.id.description_card) TextView descriptionCard;
 
     public CardDisplay(View itemView) {
         super(itemView);

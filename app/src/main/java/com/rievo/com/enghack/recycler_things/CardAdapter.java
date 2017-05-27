@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import timber.log.Timber;
+
 /**
  * Created by kevin on 2017-05-27.
  */
@@ -18,6 +20,15 @@ public class CardAdapter extends RecyclerView.Adapter<CardDisplay> {
     @Override
     public void onBindViewHolder(CardDisplay holder, int position) {
         holder.textView.setText("Text");
+
+        int randNum = (int) (Math.random() * 500) + 500;
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int counter = 0; counter < randNum; counter++){
+            stringBuilder.append("e");
+        }
+        String finalString = stringBuilder.toString();
+
+        holder.descriptionCard.setText(finalString);
     }
 
     @Override
