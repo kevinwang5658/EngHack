@@ -12,9 +12,16 @@ import timber.log.Timber;
  */
 
 public class CardAdapter extends RecyclerView.Adapter<CardDisplay> {
+
+    ItemClickListener itemClickListener;
+
+    public CardAdapter(ItemClickListener clickListener){
+        this.itemClickListener = clickListener;
+    }
+
     @Override
     public CardDisplay onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new CardDisplay(LayoutInflater.from(parent.getContext()).inflate(R.layout.flyer, parent, false));
+        return new CardDisplay(LayoutInflater.from(parent.getContext()).inflate(R.layout.flyer, parent, false), itemClickListener);
     }
 
     @Override
@@ -29,6 +36,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardDisplay> {
         String finalString = stringBuilder.toString();
 
         holder.descriptionCard.setText(finalString);
+        holder.index = position;
     }
 
     @Override

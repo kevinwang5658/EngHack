@@ -5,13 +5,12 @@ import android.rievo.com.enghack.R;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.rievo.android.library.BackStackManager;
 import com.rievo.android.library.ClusterBackStack;
 import com.rievo.android.library.LinearBackStack;
-import com.rievo.com.enghack.mysaved.MySavedListings;
+import com.rievo.com.enghack.mysaved.MainPage;
 import com.roughike.bottombar.BottomBar;
 
 import butterknife.BindView;
@@ -47,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         BackStackManager.install(this);
         clusterBackStack = ClusterBackStack.create(MAIN_BACKSTACK_TAG, 0);
 
-        LinearBackStack.create(MySavedListings.TAG, root, (layoutInflater, viewGroup) -> {
-            return new MySavedListings(layoutInflater.getContext());
+        LinearBackStack.create(MainPage.TAG, root, (layoutInflater, viewGroup) -> {
+            return new MainPage(layoutInflater.getContext());
         });
         LinearBackStack.create(BrowsePage.TAG, root, (layoutInflater, viewGroup) -> {
             return new BrowsePage(layoutInflater.getContext());
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             return new MyListings(layoutInflater.getContext());
         });
 
-        clusterBackStack.add(0, LinearBackStack.get(MySavedListings.TAG));
+        clusterBackStack.add(0, LinearBackStack.get(MainPage.TAG));
         clusterBackStack.add(1, LinearBackStack.get(BrowsePage.TAG));
         clusterBackStack.add(2, LinearBackStack.get(MyListings.TAG));
 
@@ -72,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             switch (tabId){
                 case (R.id.tab_main_page): {
                     clusterBackStack.switchContext(0);
-                    LinearBackStack.get(MySavedListings.TAG).getCurrentViewGroup().setVisibility(View.VISIBLE);
+                    LinearBackStack.get(MainPage.TAG).getCurrentViewGroup().setVisibility(View.VISIBLE);
                     break;
                 }
                 case (R.id.tab_browse): {

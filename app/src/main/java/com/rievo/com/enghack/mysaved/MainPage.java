@@ -9,7 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.rievo.android.library.LinearBackStack;
 import com.rievo.com.enghack.recycler_things.CardAdapter;
+import com.rievo.com.enghack.recycler_things.CardListViewGroup;
+import com.rievo.com.enghack.recycler_things.ItemClickListener;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,13 +21,13 @@ import butterknife.ButterKnife;
  * Created by kevin on 2017-05-27.
  */
 
-public class MySavedListings extends RelativeLayout{
+public class MainPage extends RelativeLayout implements ItemClickListener{
 
     @BindView(R.id.my_recycler_view) RecyclerView recyclerView;
 
     public static final String TAG = "main page";
 
-    public MySavedListings(Context context) {
+    public MainPage(Context context) {
         super(context);
         init();
     }
@@ -33,7 +36,15 @@ public class MySavedListings extends RelativeLayout{
         View view = LayoutInflater.from(getContext()).inflate(R.layout.mysavedlistings, this, true);
         ButterKnife.bind(this);
 
-        recyclerView.setAdapter(new CardAdapter());
+        recyclerView.setAdapter(new CardAdapter(this));
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+    }
+
+    @Override
+    public void onClick(int index) {
+        LinearBackStack.get(TAG).replaceView((layoutInflater, viewGroup) -> {
+            return new CardListViewGroup(layoutInflater.getContext());
+        }).done();
+
     }
 }
