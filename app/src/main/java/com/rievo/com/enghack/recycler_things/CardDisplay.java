@@ -13,7 +13,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by kevin on 2017-05-27.
+ * Created by kevin and Josie on 2017-05-27.
  */
 
 public class CardDisplay extends RecyclerView.ViewHolder{
@@ -22,7 +22,7 @@ public class CardDisplay extends RecyclerView.ViewHolder{
     @BindView(R.id.description_card) TextView descriptionCard;
 
     int index;
-    
+
     public CardDisplay(View itemView, ItemClickListener itemClickListener) {
         super(itemView);
         ButterKnife.bind(this, itemView);

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import timber.log.Timber;
 
 /**
- * Created by kevin on 2017-05-27.
+ * Created by kevin and Josie on 2017-05-27.
  */
 
 public class CardAdapter extends RecyclerView.Adapter<CardDisplay> {
@@ -59,10 +59,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardDisplay> {
 
         holder.itemView.setBackgroundColor(holder.itemView.getContext().getResources().getColor(color));
 
-        int randNum = (int) (Math.random() * 500) + 500;
+        int randNum = (int) (Math.random() * 5) + 5;
         StringBuilder stringBuilder = new StringBuilder();
         for (int counter = 0; counter < randNum; counter++){
-            stringBuilder.append("e");
+            stringBuilder.append("\n");
         }
         String finalString = stringBuilder.toString();
 
